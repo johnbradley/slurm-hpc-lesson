@@ -33,9 +33,10 @@ password:XXXXX
 ![srun from login node](../fig/srun-from-login-node.png)
 
 To run a job on the cluster you can use the `srun` command. 
-This will tell __Slurm__ to run your job in the foreground.
+This will tell __Slurm__ to run your job in the foreground on one of the worker nodes.
 For this example we will could the words in a text file called `/etc/hosts`.
-Type the following command:
+
+Type the following command into your terminal on the login node:
 ~~~~
 srun wc /etc/hosts
 ~~~~
@@ -47,4 +48,14 @@ srun: job 51 has been allocated resources
 2  10 158 /etc/hosts
 ~~~
 {: .output}
+In this case the file `/etc/hosts` contained 2 lines 10 words and 158 characters.
 
+### Run an Interactive Job
+When you run the `srun` command you must wait for __Slurm__ to find a free node to run your program on.
+Waiting for this allocation to become available is tedious.
+Type the following command into your terminal on the login node:
+~~~
+srun --pty bash
+~~~
+{: .bash}
+After this finishes your command prompt should be the name of the worker node that your bash job is run upon.
