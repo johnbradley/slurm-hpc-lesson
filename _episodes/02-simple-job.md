@@ -1,9 +1,10 @@
 ---
-title: "Run a simple command on the cluster"
+title: "Run a job"
 teaching: 0
 exercises: 0
 questions:
-- "Key question"
+- "How to get onto the cluster?"
+- "How to run a foreground job?"
 objectives:
 - "First objective."
 keypoints:
